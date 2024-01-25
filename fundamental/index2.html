@@ -1,0 +1,35 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Namaste Javascript 2</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <h3 id="outer-head">Bangalore</h3>
+        <script>
+            window.addEventListener('load',function(){
+                alert("load1");
+            });
+            document.addEventListener("DOMContentLoaded", (event) => {
+                alert("load3");
+            });
+            document.addEventListener("DOMContentLoaded", (event) => {
+                console.log("DOM fully loaded and parsed");
+            });
+            var heading1 = document.createElement('h1');
+            heading1.innerHTML="Cisco"
+
+            var heading2 = document.createElement('h2');
+            heading2.setAttribute("class","head-node");
+            var text = document.createTextNode("India");
+            heading2.append(text);
+
+            var outerHead = document.getElementById("outer-head");
+
+            var root = document.getElementById('root');
+            root.appendChild(heading1);
+            root.append(heading2, outerHead);
+        </script>
+    </body>
+</html>
